@@ -1,0 +1,23 @@
+env:
+    gpu: 0
+common:
+    shape: [200,224] # h,w 
+    epoch: 10
+    epoch_freeze: 0 # if 0<epoch_freeze<epoch, there is epoch with freezing backbone.
+    bs: 32 #batch size
+    check: None # checkpoint
+    lr: 0 
+    tm: 'part'  # if 'full', 'train/ and va/' would be regarded as train
+    pretrained: 1
+    if_boost: 1 # Experimental feature, if True, add a boost epoch after train epoch.
+    catch: 1
+    mname: 'efficientnet_b0' #avaliable model from :https://rwightman.github.io/pytorch-image-models/models/
+    print_freq: 2
+    save_info:
+        save_type: .pt
+        if_simplify: 1  # only valid for onnx
+    tta: 1.             #range from 0 to 1, ratio of images to be augmented
+    mpath: required
+    calculate: 1  # calculate the metrics or not
+    test_path: 'data/test'
+    if_feature: 1 # export feature map or not

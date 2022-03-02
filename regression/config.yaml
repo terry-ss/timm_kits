@@ -1,0 +1,21 @@
+env:
+    #flag: Empty
+    gpu_num: 2
+common:
+    shape: [200,224] # w,h
+    
+    epoch: 10
+    freeze: 0
+    bs: 32      #batcg_size
+    check: None   #checkpoint
+    lr: 0.03  # would be tuned by code
+    pretrained: 1
+    catch: 1
+    mname: 'efficientnet_b0'
+    print_freq: 2
+#test
+    tta: 1.
+    mpath: required
+    calculate: 1
+    test_path: 'data/test'
+    if_feature: 0 # export feature map or not
